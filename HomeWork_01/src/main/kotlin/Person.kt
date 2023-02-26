@@ -1,7 +1,7 @@
 data class Person(
-    val name:String,
-    val surname:String,
-    val age:Int,
+        val name: String,
+        val surname: String,
+        val age: Int,
 )
 
 fun MutableList<Person>.sortAge() {
@@ -11,8 +11,5 @@ fun MutableList<Person>.sortAge() {
 }
 
 fun MutableList<Person>.sortName() {
-    this.sortBy {
-        it.surname
-        it.name
-    }
+    this.sortWith(compareBy({ it.name }, { it.surname }))
 }

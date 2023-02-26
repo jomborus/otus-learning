@@ -1,4 +1,4 @@
-fun main(args: Array<String>) {
+fun main() {
     val task13 = Task13()
     println(task13.getNewList())
 
@@ -9,11 +9,14 @@ fun main(args: Array<String>) {
     val p5 = Person("ct", "ak", 26)
     val p6 = Person("at", "bk", 22)
     val p7 = Person("bt", "kk", 19)
-    val myList = mutableListOf<Person>(p1, p2, p3, p4, p5, p6, p7)
+    val p8 = Person("bt", "ak", 19)
+    val myList = mutableListOf<Person>(p1, p2, p3, p4, p5, p6, p7, p8)
     myList.sortAge()
     println(myList)
     myList.sortName()
-    println(myList)
+    myList.forEach {
+        println(it)
+    }
 
     println(task13.timeStamp {
         Thread.sleep(100)
